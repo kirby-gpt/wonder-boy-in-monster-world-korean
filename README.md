@@ -1,2 +1,53 @@
-# wonder-boy-in-monster-world-korean
-메가드라이브 원더보이 인 몬스터월드 한글 패치 공개 테스트판. Korean translation patch only; no ROM included.
+# 원더보이 인 몬스터월드 한글 패치
+
+SEGA Mega Drive / Genesis **Wonder Boy in Monster World (USA, Europe)** 한국어 패치 배포 저장소입니다.
+
+**현재 배포본은 공개 테스트판입니다.** 원본 게임 롬은 제공하지 않습니다.
+
+## 다운로드
+
+[공개 테스트판 다운로드](https://github.com/kirby-gpt/wonder-boy-in-monster-world-korean/releases/tag/v2026.09.23-test.1)
+
+릴리스의 Assets에서 `monster_world_korean_menu_guard_test_20260923.zip`을 받으세요. GitHub가 자동 생성하는 `Source code` ZIP은 패치 파일이 아닙니다.
+
+## 적용 방법
+
+1. 원본 영문 롬의 MD5가 아래 값과 일치하는지 확인하세요. 파일명이 같아도 내용이 다를 수 있습니다.
+2. 배포 ZIP을 풀고 `.ips` 파일을 IPS 패처로 **원본 롬에 한 번만** 적용하세요. 이전 한글 롬에 덧씌우지 마세요.
+3. 패치 후 MD5도 확인한 다음 에뮬레이터에서 새 롬을 완전히 다시 여세요.
+4. 기존 세이브는 백업하세요. 초기 확인은 이전 강제 저장을 불러오지 않고 진행하는 것을 권합니다.
+
+| 구분 | 값 |
+| --- | --- |
+| 원본 롬 MD5 | `945335637611A0951595FAE0994F4303` |
+| 패치 후 롬 MD5 | `8D04A36D830C2C17FE4A8441FA317B92` |
+| 원본/패치 후 크기 | 각각 1,048,576바이트 |
+
+## 이번 시험판의 변경점
+
+메뉴 한글 글꼴이 몬스터 그래픽 영역과 겹치는 경우, 해당 오브젝트를 **메뉴가 열린 동안만 일시적으로 숨깁니다.** 메뉴를 닫고 그래픽을 복구하면 다시 표시됩니다. 충돌하지 않는 오브젝트는 그대로 보입니다.
+
+이는 모든 몬스터를 메뉴 중에도 계속 표시하는 메모리 재설계가 아닙니다. 기존 메뉴 종료 복구 지연도 남아 있습니다. 메뉴가 열린 상태에서 만든 예전 강제 저장을 불러오면 이전 그래픽 메모리가 남아 있을 수 있으므로, 메뉴를 닫고 다시 열어 확인하세요.
+
+## 검증과 한계
+
+- PicoDrive에서 스프라이트 조합 2,048건, 마법 6종 변경 및 메뉴 30회 연속 개폐 검사 통과.
+- 연속 메뉴 검사 8,598프레임에서 화면에 표시되는 몬스터 한글 타일 충돌과 종료 후 복구 실패 없음.
+- 힘 마법 사용 중 일시정지, 메뉴 및 메뉴 종료 중 에뮬레이터 강제 저장/로드 4지점 통과.
+- 원본에 IPS를 적용한 결과가 시험한 롬과 바이트 단위로 일치.
+
+스프라이트 조합은 합성 프레임 검사이며 실제 몬스터 2,048종이나 전체 게임을 검사했다는 뜻이 아닙니다. 충돌 검증에는 그래픽 배치를 옮긴 통제용 세이브도 사용했습니다.
+
+**실제 제보 보스방, 전체 게임 완주, Fusion, 다른 RetroArch 코어, 메가드라이브 실기/EverDrive는 미검증입니다.** 위의 강제 저장 검증은 여관의 인게임 저장 검증과 다릅니다. 모든 대사와 진행 이벤트의 무오류를 보장하지 않습니다.
+
+## 버그 제보
+
+[Issues에 제보하기](https://github.com/kirby-gpt/wonder-boy-in-monster-world-korean/issues)
+
+패치 버전, 패치 후 롬 MD5, 에뮬레이터와 코어 이름/버전, 장소, 재현 순서, 스크린샷을 적어 주세요. 가능하면 문제가 발생하기 직전의 세이브와 불러오는 방법도 함께 적어 주세요. 롬 파일이나 개인정보는 첨부하지 마세요.
+
+## 배포 파일과 글꼴
+
+ZIP에는 IPS, 적용 안내, 원본 롬 식별 정보, 글꼴 출처/라이선스, 검증 기록만 포함됩니다. 사용 글꼴은 GalmuriMono7 2.403이며, 정확한 원본 파일 해시와 SIL Open Font License 1.1 전문은 ZIP에 동봉했습니다.
+
+This repository distributes a Korean translation **patch only**, not the game ROM. This is an experimental public test release with the compatibility limitations described above.
